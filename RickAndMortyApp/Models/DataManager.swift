@@ -80,6 +80,7 @@ extension DataManager: AboutViewControllerDelegate {
                 guard let likedObject = realm.objects(LikedObject.self)
                     .filter("index == \(keyToRemove!)")
                     .first  else { return }
+                
                 try! realm.write { realm.delete(likedObject) }
             }
         }
